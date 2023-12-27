@@ -25,5 +25,5 @@
 
 
 - name: "load user data"
-  ansible.builtin.shell: "mongo --host mongodb.saanvi.website < /app/schema/{{varaible}}.js"
+  ansible.builtin.shell: "mongo --host mongodb.saanvi.website < /app/schema/{{variable}}.js"
   when: variable == "user" and user_count.stdout == "0"
