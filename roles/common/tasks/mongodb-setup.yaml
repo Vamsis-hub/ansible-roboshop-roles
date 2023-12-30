@@ -9,21 +9,21 @@
     state: present
 
 - name: get the categories count
-  ansible.builtin.shell: mongo --host mongodb.saanvi.website --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
+  ansible.builtin.shell: mongo --host {{MONGODB_HOST}} --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
   register: product_count
   when: variable == "catalogue"
 
 - name: get the users count
-  ansible.builtin.shell:  mongo --host mongodb.saanvi.website --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
+  ansible.builtin.shell:  mongo --host {{MONGODB_HOST}} --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
   register: user_count
   when: variable == "user"
 
 
 - name: "load catalogue data"
-  ansible.builtin.shell: "mongo --host mongodb.saanvi.website < /app/schema/{{variable}}.js"
+  ansible.builtin.shell: "mongo --host {{MONGODB_HOST}} < /app/schema/{{variable}}.js"
   when: variable == "catalogue" and product_count.stdout == "0"
 
 
 - name: "load user data"
-  ansible.builtin.shell: "mongo --host mongodb.saanvi.website < /app/schema/{{variable}}.js"
+  ansible.builtin.shell: "mongo --host {{MONGODB_HOST}} < /app/schema/{{variable}}.js"
   when: variable == "user" and user_count.stdout == "0"
