@@ -1,6 +1,8 @@
 - name: "install {{variable}}"
   hosts: "{{variable}}"
   become: yes
+  vars_files:
+  - variables.yaml
   roles:
   
   - "{{variable}}"

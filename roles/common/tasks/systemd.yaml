@@ -1,7 +1,13 @@
+# - name: "copy to {{variable}} service"
+#   ansible.builtin.copy:
+#     src: "{{variable}}.service"
+#     dest: "/etc/systemd/system/{{variable}}.service"
+
 - name: "copy to {{variable}} service"
-  ansible.builtin.copy:
-    src: "{{variable}}.service"
+  ansible.builtin.template:
+    src: "{{variable}}.service.j2"
     dest: "/etc/systemd/system/{{variable}}.service"
+
 
 - name: systemctl daemon
   ansible.builtin.systemd_service:

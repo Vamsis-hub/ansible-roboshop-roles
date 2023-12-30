@@ -1,0 +1,10 @@
+MONGODB_HOST: mongodb.saanvi.website # submit your host
+REDIS_HOST: redis.saanvi.website
+MYSQL_HOST: mysql.saanvi.website
+RABBITMQ_HOST: rabbitmq.saanvi.website
+CATALOGUE_HOST: catalogue.saanvi.website
+USER_HOST: user.saanvi.website
+CART_HOST: cart.saanvi.website
+SHIPPING_HOST: shipping.saanvi.website
+PAYMENT_HOST: payment.saanvi.website
+DISPATCH_HOST: dispatch.saanvi.website
