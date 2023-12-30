@@ -4,5 +4,5 @@
    state: present
 
 - name: load schema
-  ansible.builtin.command: mysql -h MYSQL_HOST -uroot -pRoboShop@1 < /app/schema/{{variable}}.sql 
+  ansible.builtin.shell: mysql -h MYSQL_HOST -uroot -pRoboShop@1 < /app/schema/{{variable}}.sql 
 
