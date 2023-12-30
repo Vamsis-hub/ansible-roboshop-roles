@@ -34,10 +34,12 @@
   ansible.builtin.template:
     src: roboshop.conf.j2
     dest: /etc/nginx/default.d/roboshop.conf
+  nofity:
+  - Restart nginx
     
 
-- name: system restart and enable
-  ansible.builtin.service:
-    name: nginx
-    state: started
-    enabled: yes
+# - name: system restart and enable
+#   ansible.builtin.service:
+#     name: nginx
+#     state: started
+#     enabled: yes
