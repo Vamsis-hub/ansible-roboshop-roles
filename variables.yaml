@@ -1,4 +1,4 @@
-MONGODB_HOST: mongodb.saanvi.website # submit your host
+MONGODB_HOST: mongodb.arundev.online # submit your host
 REDIS_HOST: redis.saanvi.website
 MYSQL_HOST: mysql.saanvi.website
 RABBITMQ_HOST: rabbitmq.saanvi.website
